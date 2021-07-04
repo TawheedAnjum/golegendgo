@@ -16,6 +16,8 @@ import image1 from '../../assets/images/product/image1small.jpg';
 import image2 from '../../assets/images/product/image2small.jpg';
 import image3 from "../../assets/images/product/image3small.jpg";
 import image1large from "../../assets/images/product/image1large.jpg";
+import image2large from "../../assets/images/product/image2large.jpg";
+import image3large from "../../assets/images/product/image3large.jpg";
 
 import { SideBySideMagnifier } from "react-image-magnifiers";
 
@@ -55,10 +57,26 @@ function ProductImage(props) {
     const [largeImgName, setLargeImgName] = useState(image1large);
     
     const images = [image1, image2, image3];
+    // const largeImages = [
+    //   image1 = image1large,
+    //   image2 = image2large,
+    //   image3= image3large,
+    // ];
 
     const imageChangeHandaler = (img) => {
       setImgName(img);
+      largeImageSet(img)
     };
+
+    const largeImageSet = (img) => {
+      if(img === image1 ){
+        setLargeImgName(image1large)
+      }else if(img === image2){
+        setLargeImgName(image2large)
+      }else if(img === image3){
+        setLargeImgName(image3large)
+      }
+    }
 
     return (
       <div>
@@ -72,7 +90,7 @@ function ProductImage(props) {
                     xs={3}
                     md={12}
                     key={i}
-                    //  onClick={imageChangeHandaler(i)}
+                    onClick={() => { imageChangeHandaler(i) }}
                   >
                     <Card className={classes.card} variant="outlined">
                       <CardActionArea>

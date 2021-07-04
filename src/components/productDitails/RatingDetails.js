@@ -9,7 +9,7 @@ import {
 import StarIcon from "@material-ui/icons/Star";
 
 
-const BorderLinearProgress = withStyles((theme) => ({
+const BorderLinearProgress = withStyles(({
   root: {
     height: 5.5,
     borderRadius: 5,
@@ -17,8 +17,7 @@ const BorderLinearProgress = withStyles((theme) => ({
     margin: "0 .8rem",
   },
   colorPrimary: {
-    backgroundColor:
-      theme.palette.grey[theme.palette.type === "light" ? 200 : 700],
+    backgroundColor:'white',
   },
   bar: {
     borderRadius: 5,
@@ -26,7 +25,7 @@ const BorderLinearProgress = withStyles((theme) => ({
   },
 }))(LinearProgress);
 
-function RatingDetails() {
+function RatingDetails(props) {
     return (
       <Grid container spacing={3} alignItems="center">
         <Grid item align="center">

@@ -10,7 +10,7 @@ export class Product extends Component {
     render() {
         return (
           <Container maxWidth="lg" className="productRoot">
-            <Grid container spacing="3">
+            <Grid container spacing={3}>
               <Grid item md={5} xs={12}>
                 <ProductImage />
               </Grid>

@@ -1,15 +1,24 @@
 import React from 'react';
 import { Container, Grid } from "@material-ui/core";
-import CartItem from '../components/cart/CartItem';
+import AllCartItems from "../components/cart/AllCartItems";
+import PriceDetails from '../components/cart/PriceDetails';
 
 function Cart() {
     return (
-      <Container>
-        <Grid container spacing={3}>
-          <Grid item md={9} xs={12}><CartItem /></Grid>
-          <Grid item md={3} xs={12}>Product Price</Grid>
-        </Grid>
-      </Container>
+      <div
+        style={{ backgroundColor: "#f1f3f6", height: "100vh", width: "100vw" }}
+      >
+        <Container>
+          <Grid container spacing={2}>
+            <Grid item md={8} xs={12}>
+              <AllCartItems />
+            </Grid>
+            <Grid item md={4} xs={12}>
+              <PriceDetails />
+            </Grid>
+          </Grid>
+        </Container>
+      </div>
     );
 }
 

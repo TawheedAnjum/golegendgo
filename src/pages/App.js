@@ -6,7 +6,7 @@ import Cart from './Cart';
 function App() {
   return (
     <React.Fragment>
-      <Product />
+      <Cart />
     </React.Fragment>
   );
 }

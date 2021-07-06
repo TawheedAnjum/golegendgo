@@ -1,31 +1,17 @@
 import React from 'react';
+
 import {
   Typography,
   Box,
   Grid,
-  LinearProgress,
-  withStyles,
 } from "@material-ui/core";
+import { BorderLinearProgress } from "../../assets/styleJS/ProductStyle";
+
 import StarIcon from "@material-ui/icons/Star";
 
 
-const BorderLinearProgress = withStyles(({
-  root: {
-    height: 5.5,
-    borderRadius: 5,
-    width: "150px",
-    margin: "0 .8rem",
-  },
-  colorPrimary: {
-    backgroundColor:'white',
-  },
-  bar: {
-    borderRadius: 5,
-    backgroundColor: (props) => props.bgColor,
-  },
-}))(LinearProgress);
 
-function RatingDetails(props) {
+function RatingDetails() {
     return (
       <Grid container spacing={3} alignItems="center">
         <Grid item align="center">
@@ -48,7 +34,7 @@ function RatingDetails(props) {
               <BorderLinearProgress
                 variant="determinate"
                 value={95}
-                bgColor="green"
+                bgcolor="green"
               />
               <Typography varient="caption">37,512</Typography>
             </Box>
@@ -58,7 +44,7 @@ function RatingDetails(props) {
               <BorderLinearProgress
                 variant="determinate"
                 value={80}
-                bgColor="green"
+                bgcolor="green"
               />
               <Typography varient="caption">21,333</Typography>
             </Box>
@@ -68,7 +54,7 @@ function RatingDetails(props) {
               <BorderLinearProgress
                 variant="determinate"
                 value={50}
-                bgColor="yellow"
+                bgcolor="yellow"
               />
               <Typography varient="caption">16,264</Typography>
             </Box>
@@ -78,7 +64,7 @@ function RatingDetails(props) {
               <BorderLinearProgress
                 variant="determinate"
                 value={20}
-                bgColor="red"
+                bgcolor="red"
               />
               <Typography varient="caption">7,656</Typography>
             </Box>
@@ -88,7 +74,7 @@ function RatingDetails(props) {
               <BorderLinearProgress
                 variant="determinate"
                 value={20}
-                bgColor="red"
+                bgcolor="red"
               />
               <Typography varient="caption">10,053</Typography>
             </Box>

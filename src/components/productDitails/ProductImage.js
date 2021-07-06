@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 import {
-  makeStyles,
   Button,
   Grid,
   Card,
   CardActionArea,
   CardMedia
 } from "@material-ui/core";
+import { useStyles } from "../../assets/styleJS/ProductStyle";
 
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import ShopIcon from "@material-ui/icons/Shop";
@@ -21,35 +21,6 @@ import image3large from "../../assets/images/product/image3large.jpg";
 
 import { SideBySideMagnifier } from "react-image-magnifiers";
 
-const useStyles = makeStyles({
-  card: {
-    height: "70px",
-  },
-  media: {
-    paddingTop: "100%", // 1:1,
-  },
-  addbtn: {
-    marginTop: "1rem",
-    width: "100%",
-    height: "50px",
-    backgroundColor: "#ff9f00",
-    color: "white",
-    "&:hover": {
-      backgroundColor: "#f19603",
-    },
-  },
-  buybtn: {
-    marginTop: "1rem",
-    width: "100%",
-    height: "50px",
-    backgroundColor: "#fb641b",
-    color: "white",
-    "&:hover": {
-      backgroundColor: "#f0621b",
-    },
-  },
-});
-
 function ProductImage(props) {
     const classes = useStyles(props);
 
@@ -57,12 +28,7 @@ function ProductImage(props) {
     const [largeImgName, setLargeImgName] = useState(image1large);
     
     const images = [image1, image2, image3];
-    // const largeImages = [
-    //   image1 = image1large,
-    //   image2 = image2large,
-    //   image3= image3large,
-    // ];
-
+    
     const imageChangeHandaler = (img) => {
       setImgName(img);
       largeImageSet(img)
@@ -90,7 +56,9 @@ function ProductImage(props) {
                     xs={3}
                     md={12}
                     key={i}
-                    onClick={() => { imageChangeHandaler(i) }}
+                    onClick={() => {
+                      imageChangeHandaler(i);
+                    }}
                   >
                     <Card className={classes.card} variant="outlined">
                       <CardActionArea>
@@ -112,6 +80,9 @@ function ProductImage(props) {
               imageAlt="Example"
               largeImageSrc={largeImgName}
               className={classes.largeimage}
+              fillGapLeft={10}
+              fillGapRight={15}
+              fillGapBottom={15}
             />
             <Grid container spacing={2}>
               <Grid item md={6} xs={6}>

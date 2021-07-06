@@ -9,7 +9,9 @@ import {
   ListItem,
   Paper,
   Link,
+  Switch,
   Collapse,
+  FormControlLabel
 } from "@material-ui/core";
 import {useStyles} from "../../assets/styleJS/ProductStyle";
 import LocalOfferIcon from "@material-ui/icons/LocalOffer";
@@ -22,73 +24,35 @@ function ProductInfo(props) {
   const classes = useStyles(props);
 
   const listNumber = [0, 1, 2, 3, 4, 5];
-  const comments = [0, 1, 2, 3, 4];
 
   // more
-  const [checked, setChecked] = React.useState(false);
-  const [moreChaked, setMoreChaked] = React.useState(false)
+   const [checked, setChecked] = React.useState(false);
 
-  const handleChange = () => {
-    setChecked((prev) => !prev);
-    setMoreChaked((prev) => !prev);
-  };
-  let moreBtn = (
-    <Button href="#text-buttons" color="primary" onClick={handleChange}>
-      Read More
-    </Button>
-  );
-  if (moreChaked) {
-    moreBtn = (
-      <Button href="#text-buttons" color="primary" onClick={handleChange}>
-        Read Less
-    </Button>
-    );
-  };
+   const handleChange = () => {
+     setChecked((prev) => !prev);
+   };
 
-  const moreComments = (
-    <Box>
-      {comments.slice(0, 2).map((i) => {
-        return (
-          <Box
-            key={i}
-            style={{ padding: "1.5rem", borderBottom: "1px solid #e0e0e0" }}
-          >
-            <RatingComment />
-          </Box>
-        );
-      })}
-      <Collapse in={checked} collapsedHeight={98}>
-        {comments.slice(3).map((i) => {
-          return (
-            <Box
-              key={i}
-              style={{ padding: "1.5rem", borderBottom: "1px solid #e0e0e0" }}
-            >
-              <RatingComment />
-            </Box>
-          );
-        })}
-      </Collapse>
-      <Box style={{ padding: "1.5rem", borderBottom: "1px solid #e0e0e0" }}>
-        {moreBtn}
-      </Box>
-    </Box>
-  );
-
-  const allComments = comments.map(i => {
-    return (
-      <Box
-        key={i}
-        style={{ padding: "1.5rem", borderBottom: "1px solid #e0e0e0" }}
-      >
-        <RatingComment />
-      </Box>
-    );
-  })
-  // more finish
 
   return (
     <div>
+      {/* more */}
+      <div>
+        <FormControlLabel
+          control={<Switch checked={checked} onChange={handleChange} />}
+          label="Show"
+        />
+        <Collapse in={checked} collapsedHeight={40}>
+          <Paper elevation={4} className={classes.paper}>
+            <svg className={classes.svg}>
+              <polygon
+                points="0,100 50,00, 100,100"
+                className={classes.polygon}
+              />
+            </svg>
+          </Paper>
+        </Collapse>
+      </div>
+
       <Typography variant="h6" gutterBottom>
         IWS 104 TC Cotton Double Printed Bedsheet (Pack of 1, Green)#JustHere
       </Typography>
@@ -282,16 +246,15 @@ function ProductInfo(props) {
           <RatingDetails />
         </Box>
         <Box>
-          {/* {comments.map(i => {
-            return (
-              <Box
-                style={{ padding: "1.5rem", borderBottom: "1px solid #e0e0e0" }}
-              >
-                <RatingComment key={i} />
-              </Box>
-            );
-          })} */}
-          {comments.length>3 ? moreComments : allComments}
+          <Box style={{ padding: "1.5rem", borderBottom: "1px solid #e0e0e0" }}>
+            <RatingComment />
+          </Box>
+          <Box style={{ padding: "1.5rem", borderBottom: "1px solid #e0e0e0" }}>
+            <RatingComment />
+          </Box>
+          <Box style={{ padding: "1.5rem", borderBottom: "1px solid #e0e0e0" }}>
+            <RatingComment />
+          </Box>
         </Box>
       </Paper>
       {/* rating finish */}

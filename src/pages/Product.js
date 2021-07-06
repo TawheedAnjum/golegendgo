@@ -15,7 +15,7 @@ export class Product extends Component {
                 <ProductImage />
               </Grid>
               <Grid item md={7} xs={12}>
-                <ProductInfo></ProductInfo>
+                <ProductInfo />
               </Grid>
             </Grid>
           </Container>

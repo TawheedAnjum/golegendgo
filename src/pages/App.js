@@ -1,8 +1,7 @@
 import React from 'react';
 import Product from './Product';
-//import Cart from './Cart';
-//import Payment from './Payment';
-//import Payment2 from "./Payment2";
+import Cart from './Cart';
+import Payment from './Payment';
 
 
 function App() {

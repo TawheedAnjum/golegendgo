@@ -22,7 +22,7 @@ function ProductInfo(props) {
   const classes = useStyles(props);
 
   const listNumber = [0, 1, 2, 3, 4, 5];
-  const comments = [0, 1, 2, 3, 4];
+  const comments = [0, 1, 2,3,5];
 
   // more
   const [checked, setChecked] = React.useState(false);

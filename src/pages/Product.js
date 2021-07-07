@@ -4,6 +4,7 @@ import { Container, Grid } from "@material-ui/core";
 import "../assets/css/product.css";
 import ProductInfo from '../components/productDitails/ProductInfo';
 import ProductImage from '../components/productDitails/ProductImage';
+import SimilerProduct from '../components/similerProduct/SimilerProduct';
 
 
 export class Product extends Component {
@@ -18,6 +19,9 @@ export class Product extends Component {
                 <ProductInfo />
               </Grid>
             </Grid>
+            {/* similer product */}
+            <SimilerProduct />
+            {/* similer product finish */}
           </Container>
         ); 
     }

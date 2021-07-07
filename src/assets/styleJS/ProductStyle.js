@@ -86,6 +86,18 @@ const useStyles = makeStyles((theme) => ({
       fontSize: "1rem",
     },
   },
+
+  // single card
+  similerCard: {
+    maxWidth: "95%",
+    [theme.breakpoints.down("sm")]: {
+      maxWidth: '100%',
+      margin: '0 1rem'
+    },
+  },
+  similerCardImage: {
+    height: "180px",
+  },
 }));
 
 

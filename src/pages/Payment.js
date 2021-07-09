@@ -99,11 +99,7 @@ function Payment(props) {
                             label="Enter Email/Mobile Number"
                             className={classes.emailField}
                           />
-                          <Typography
-                            variant="caption"
-                            className={classes.policy}
-                            display="block"
-                          >
+                          <Typography variant="caption" className={classes.policy} display="block">
                             By continuing your agree To Golegendgo's{" "}
                             <Link href="#">Tearms and Use</Link> and{" "}
                             <Link href="#">Private Policy</Link>

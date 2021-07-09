@@ -35,9 +35,6 @@ function SimilerProduct() {
         </Typography>
         <Carousel
           responsive={responsive}
-          autoPlay={true}
-          autoPlaySpeed={5000}
-          infinite={true}
         >
           {productNumber.map(i => {
             return <ProductCart key={i} />

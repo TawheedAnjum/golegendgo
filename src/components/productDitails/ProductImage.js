@@ -12,44 +12,32 @@ import { useStyles } from "../../assets/styleJS/ProductStyle";
 import ShoppingCartIcon from "@material-ui/icons/ShoppingCart";
 import ShopIcon from "@material-ui/icons/Shop";
 
-import image1 from '../../assets/images/product/image1small.jpg';
-import image2 from '../../assets/images/product/image2small.jpg';
-import image3 from "../../assets/images/product/image3small.jpg";
-import image1large from "../../assets/images/product/image1large.jpg";
-import image2large from "../../assets/images/product/image2large.jpg";
-import image3large from "../../assets/images/product/image3large.jpg";
+// import image1 from '../../assets/images/product/image1small.jpg';
+// import image2 from '../../assets/images/product/image2small.jpg';
+// import image3 from "../../assets/images/product/image3small.jpg";
+// import image1large from "../../assets/images/product/image1large.jpg";
+// import image2large from "../../assets/images/product/image2large.jpg";
+// import image3large from "../../assets/images/product/image3large.jpg";
 
 import { SideBySideMagnifier } from "react-image-magnifiers";
 
 function ProductImage(props) {
     const classes = useStyles(props);
 
-    const [imgName, setImgName] = useState(image1);
-    const [largeImgName, setLargeImgName] = useState(image1large);
-    
-    const images = [image1, image2, image3];
+    const [activeImage, setActiveImage] = useState(props.images[0]);
     
     const imageChangeHandaler = (img) => {
-      setImgName(img);
-      largeImageSet(img)
+      setActiveImage(img);
     };
 
-    const largeImageSet = (img) => {
-      if(img === image1 ){
-        setLargeImgName(image1large)
-      }else if(img === image2){
-        setLargeImgName(image2large)
-      }else if(img === image3){
-        setLargeImgName(image3large)
-      }
-    }
 
     return (
       <div>
+       
         <Grid container spacing={1}>
           <Grid item md={2} xs={12}>
-            <Grid container spacing={1}>
-              {images.map((i) => {
+            <Grid container spacing={2}>
+              {props.images.map((i) => {
                 return (
                   <Grid
                     item
@@ -63,7 +51,7 @@ function ProductImage(props) {
                     <Card className={classes.card} variant="outlined">
                       <CardActionArea>
                         <CardMedia
-                          image={i}
+                          image={`./ProductImage/${i}`}
                           title="Contemplative Reptile"
                           className={classes.media}
                         />
@@ -76,9 +64,10 @@ function ProductImage(props) {
           </Grid>
           <Grid item md={10} xs={12}>
             <SideBySideMagnifier
-              imageSrc={imgName}
+              imageSrc= {`./ProductImage/${activeImage}`}
               imageAlt="Example"
-              largeImageSrc={largeImgName}
+              fillAvailableSpace={true}
+              largeImageSrc= {`./ProductImage/${activeImage}`}
               className={classes.largeimage}
               fillGapLeft={10}
               fillGapRight={15}

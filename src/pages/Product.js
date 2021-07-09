@@ -8,12 +8,15 @@ import SimilerProduct from '../components/similerProduct/SimilerProduct';
 
 
 export class Product extends Component {
+    state = {
+      images: ['image1.jpg', 'image2.jpg', 'image3.jpg'],
+    }
     render() {
         return (
           <Container maxWidth="lg" className="productRoot">
             <Grid container spacing={3}>
               <Grid item md={5} xs={12}>
-                <ProductImage />
+                <ProductImage images={this.state.images} />
               </Grid>
               <Grid item md={7} xs={12}>
                 <ProductInfo />

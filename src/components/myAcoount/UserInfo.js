@@ -1,8 +1,8 @@
 import React from "react";
 
-import { Box, Badge, Avatar, Typography } from "@material-ui/core";
+import { Box, Typography } from "@material-ui/core";
 
-import { SmallAvatar, useStyles } from "../../assets/styleJS/myAccountStyle";
+import ProfilePicture from "./ProfilePicture";
 
 const styles = {
   accountUserName: {
@@ -11,13 +11,13 @@ const styles = {
 };
 
 const UserInfo = () => {
-  const classes = useStyles();
   return (
     <Box display="flex" alignItems="center">
       <Box>
-        <Badge overlap="circular" badgeContent={<SmallAvatar src="./images/icon/edit.svg" />}>
+        {/* <Badge overlap="circular" badgeContent={<SmallAvatar src="./images/icon/edit.svg" />}>
           <Avatar alt="Travis Howard" src="./images/userProfile/profile1.png" className={classes.large} />
-        </Badge>
+        </Badge> */}
+        <ProfilePicture />
       </Box>
       <Box ml={4}>
         <Typography variant="h5" style={styles.accountUserName} color="error">

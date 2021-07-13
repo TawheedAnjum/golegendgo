@@ -1,5 +1,6 @@
-.MuiAccordionSummary-root.Mui-expanded{
-    background-color:#0275d8;
-    max-height: 48px;
-    color: white;
-};
+.MuiAccordionSummary-root.Mui-expanded {
+  background-color: #0275d8;
+  max-height: 48px;
+  color: white;
+  /* color: #faf9f9; */
+}

@@ -20,6 +20,30 @@ import RatingComment from "./RatingComment";
 
 function ProductInfo(props) {
   const classes = useStyles(props);
+  
+// ratting color
+  const ratingHandler = (rating)=> {
+    if(rating < 2){
+      return 'red'
+    }else if(rating >= 2 && rating<3){
+      return '#ff9f00';
+    }
+    return 'green'
+  }
+ 
+
+  // style
+  const styles = {
+      horizontalMargin: {
+        margin: "0 .5rem",
+      },
+      font500: {
+          fontWeight: "bold",
+      },
+      commentRating: {
+        backgroundColor: ratingHandler(props.productInfo.totalRating),
+      },
+  };
 
   const listNumber = [0, 1, 2, 3, 4, 5];
   const comments = [0, 1, 2,3,5];
@@ -90,24 +114,21 @@ function ProductInfo(props) {
   return (
     <div>
       <Typography variant="h6" gutterBottom>
-        IWS 104 TC Cotton Double Printed Bedsheet (Pack of 1, Green)#JustHere
+        {props.productInfo.productTitle}
       </Typography>
-      <Button
-        variant="contained"
-        size="small"
-        color="primary"
-        className={classes.ratingbtn}
-      >
-        3.5*
-      </Button>
-      <Typography
-        variant="subtitle1"
-        display="inline"
-        color="textSecondary"
-        style={{ fontWeight: "500" }}
-      >
-        92,709 Ratings & 9,051 Reviews
-      </Typography>
+      <Box display="flex" alignItems="center">
+        <Typography className={classes.commentRating} style={styles.commentRating} align="center">
+          {props.productInfo.totalRating}*
+        </Typography>
+        <Typography
+          variant="subtitle1"
+          display="inline"
+          color="textSecondary"
+          style={{ fontWeight: "500", marginLeft: "8px"}}
+        >
+          {props.productInfo.totalRatingNumber} Ratings & {props.productInfo.totalReviewNumber} Reviews
+        </Typography>
+      </Box>
 
       {/* price */}
       <div className="price">
@@ -119,16 +140,16 @@ function ProductInfo(props) {
         </Typography>
         <Box display="flex" alignItems="center">
           <Typography variant="h5" style={{ fontWeight: "bold" }}>
-            ₹329
+            ₹{props.productInfo.recentPrice}
           </Typography>
           <Typography
             color="textSecondary"
             style={{ margin: "0 .5rem", textDecoration: "line-through" }}
           >
-            ₹1,199
+            ₹{props.productInfo.oldPrice}
           </Typography>
           <Typography color="textSecondary" style={{ color: "#388e3c" }}>
-            72% off
+            {props.productInfo.discount}% off
           </Typography>
         </Box>
       </div>
@@ -172,12 +193,7 @@ function ProductInfo(props) {
       <Box display="flex" style={{ marginTop: "1.5rem" }}>
         <Typography style={{ marginRight: "1.5rem" }}>Description</Typography>
         <Typography>
-          We offers to you a range of home furnishing products from the house of
-          IWS. IWS is a leading home furnishing brand of the country. This
-          beautiful bed sheet will not only add a dash of colour and vibrancy to
-          your home but also will fetch admiration and compliments. Bring home
-          this beautiful bed sheet from the house of IWS today and get ready to
-          mesmerise one and all.
+         {props.productInfo.description}
         </Typography>
       </Box>
       {/* description finish */}

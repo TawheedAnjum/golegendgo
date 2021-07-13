@@ -49,9 +49,10 @@ const useStyles = makeStyles((theme) => ({
   commentRating: {
     fontSize: ".8rem",
     color: "white",
-    padding: "2px 8px",
-    minWidth: "36px",
+    padding: "2px 0",
+    minWidth: "40px",
     boxShadow: "none",
+    borderRadius: '4px',
   },
   reviewStatus: {
     fontWeight: "bold",

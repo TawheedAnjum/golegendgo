@@ -1,17 +1,7 @@
 import React, { useState } from "react";
 
-import {
-  Typography,
-  Button,
-  Box,
-  Grid,
-  Card,
-  CardActionArea,
-  CardMedia,
-  IconButton,
-} from "@material-ui/core";
+import { Typography, Button, Box, Grid, Card, CardActionArea, CardMedia, IconButton } from "@material-ui/core";
 
-import image1 from "../../assets/images/product/image1small.jpg";
 import AddIcon from "@material-ui/icons/Add";
 import RemoveIcon from "@material-ui/icons/Remove";
 
@@ -28,11 +18,7 @@ function CartItem(props) {
             <Grid item md={3} xs={12}>
               <Card className={classes.card} variant="outlined">
                 <CardActionArea>
-                  <CardMedia
-                    image={image1}
-                    title="Contemplative Reptile"
-                    className={classes.media}
-                  />
+                  <CardMedia image="./images/product/image1.jpg" title="Contemplative Reptile" className={classes.media} />
                 </CardActionArea>
               </Card>
             </Grid>
@@ -62,42 +48,23 @@ function CartItem(props) {
                 >
                   ₹1,199
                 </Typography>
-                <Typography
-                  color="textSecondary"
-                  style={{ color: "#388e3c", fontWeight: "500" }}
-                >
+                <Typography color="textSecondary" style={{ color: "#388e3c", fontWeight: "500" }}>
                   72% off
                 </Typography>
-                <Typography
-                  color="textSecondary"
-                  style={{ color: "#388e3c", fontWeight: "500", marginLeft: '1rem' }}
-                >
+                <Typography color="textSecondary" style={{ color: "#388e3c", fontWeight: "500", marginLeft: "1rem" }}>
                   2 offers avaialble
                 </Typography>
               </Box>
             </Grid>
             <Grid container alignItems="center" spacing={2}>
               <Grid item md={3} xs={4}>
-                <IconButton
-                  aria-label="delete"
-                  className={classes.actionBtn}
-                  onClick={() => setQuantity(quantity + 1)}
-                >
+                <IconButton aria-label="delete" className={classes.actionBtn} onClick={() => setQuantity(quantity + 1)}>
                   <AddIcon className={classes.actionIcon} />
                 </IconButton>
 
-                <input
-                  type="text"
-                  value={quantity}
-                  onChange={(event) => setQuantity(event.target.value)}
-                  className={classes.inputFild}
-                />
+                <input type="text" value={quantity} onChange={(event) => setQuantity(event.target.value)} className={classes.inputFild} />
 
-                <IconButton
-                  aria-label="delete"
-                  className={classes.actionBtn}
-                  onClick={() => setQuantity(quantity - 1)}
-                >
+                <IconButton aria-label="delete" className={classes.actionBtn} onClick={() => setQuantity(quantity - 1)}>
                   <RemoveIcon className={classes.actionIcon} />
                 </IconButton>
               </Grid>
@@ -111,9 +78,7 @@ function CartItem(props) {
         <Grid item md={4} xs={12} className={classes.delivary}>
           <Box display="flex">
             <Typography>Delivery by Wed Jul 7 |</Typography>
-            <Typography style={{ color: "green", margin: "0 4px" }}>
-              Free
-            </Typography>
+            <Typography style={{ color: "green", margin: "0 4px" }}>Free</Typography>
             <Typography style={{ fontWeight: "500" }}>$40</Typography>
           </Box>
         </Grid>
@@ -122,4 +87,4 @@ function CartItem(props) {
   );
 }
 
-export default CartItem
+export default CartItem;

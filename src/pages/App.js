@@ -1,13 +1,13 @@
-import React from 'react';
-import Product from './Product';
-import Cart from './Cart';
-import Payment from './Payment';
-
+import React from "react";
+// import Product from "./Product";
+// import Cart from "./Cart";
+// import Payment from "./Payment";
+import MyAccount from "./MyAccount";
 
 function App() {
   return (
     <React.Fragment>
-      <Product />
+      <MyAccount />
     </React.Fragment>
   );
 }

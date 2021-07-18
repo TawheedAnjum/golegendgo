@@ -4,7 +4,7 @@ import ProfileInfoListItem from "./ProfileInfoListItem";
 import ProfileItemHeader from "./ProfileItemHeader";
 
 import { Typography, Button, Grid, Box } from "@material-ui/core";
-import { useStyles } from "../../assets/styleJS/userProfile";
+import { useStyles } from "../../assets/styleJS/userProfileStyle";
 import EditIcon from "@material-ui/icons/Edit";
 
 function UserAllInfo() {

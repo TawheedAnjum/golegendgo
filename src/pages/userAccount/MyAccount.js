@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 
 import { Container } from "@material-ui/core";
-import UserInfo from "../components/myAcoount/UserInfo";
-import UserLavel from "../components/myAcoount/UserLavel";
-import AccountOption from "../components/myAcoount/AccountOption";
+import UserInfo from "../../components/myAcoount/UserInfo";
+import UserLavel from "../../components/myAcoount/UserLavel";
+import AccountOption from "../../components/myAcoount/AccountOption";
 
 class MyAccount extends Component {
   render() {

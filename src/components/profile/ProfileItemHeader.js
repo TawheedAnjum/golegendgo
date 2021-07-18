@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Box } from "@material-ui/core";
-import { useStyles } from "../../assets/styleJS/userProfile";
+import { useStyles } from "../../assets/styleJS/userProfileStyle";
 
 function ProfileItemHeader(props) {
   const classes = useStyles(props);

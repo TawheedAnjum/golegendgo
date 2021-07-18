@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 
 import { Container, Paper } from "@material-ui/core";
-import UserProfileInfo from "../components/profile/UserProfileInfo";
-import UserAllInfo from "../components/profile/UserAllInfo";
+import UserProfileInfo from "../../components/profile/UserProfileInfo";
+import UserAllInfo from "../../components/profile/UserAllInfo";
 
 class UserProfile extends Component {
   render() {

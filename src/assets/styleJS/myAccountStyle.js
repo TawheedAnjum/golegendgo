@@ -54,7 +54,7 @@ export const SmallAvatar = withStyles((theme) => ({
   root: {
     width: 16,
     height: 16,
-    right: -105,
+    right: -110,
     top: 90,
     boxShadow: "rgb(0 0 0 / 20%) 0px 1px 8px 0px, rgb(0 0 0 / 14%) 0px 3px 4px 0px, rgb(0 0 0 / 12%) 0px 3px 3px -2px",
     backgroundColor: "white",
@@ -62,7 +62,7 @@ export const SmallAvatar = withStyles((theme) => ({
     [theme.breakpoints.down("sm")]: {
       width: 12,
       height: 12,
-      right: -90,
+      right: -100,
       top: 80,
     },
   },
